@@ -15,29 +15,9 @@ const router = createRouter({
       component: () => import('../views/plugin/impl/FancyNpcs/FancyNpcs.vue')
     },
     {
-      path: '/FancyNpcs/commands',
-      name: 'fancynpcscommands',
-      component: () => import('../views/plugin/impl/FancyNpcs/FancyNpcsCommands.vue')
-    },
-    {
-      path: '/FancyNpcs/api',
-      name: 'fancynpcsapi',
-      component: () => import('../views/plugin/impl/FancyNpcs/FancyNpcsApi.vue')
-    },
-    {
       path: '/FancyHolograms',
       name: 'fancyholograms',
       component: () => import('../views/plugin/impl/FancyHolograms/FancyHolograms.vue')
-    },
-    {
-      path: '/FancyHolograms/commands',
-      name: 'fancyhologramscommands',
-      component: () => import('../views/plugin/impl/FancyHolograms/FancyHologramsCommands.vue')
-    },
-    {
-      path: '/FancyHolograms/api',
-      name: 'fancyhologramssapi',
-      component: () => import('../views/plugin/impl/FancyHolograms/FancyHologramsApi.vue')
     },
   ]
 })

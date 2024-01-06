@@ -5,20 +5,9 @@ const props = defineProps(["plugin"])
 <template>
   <div class="sidebar">
     <div class="bg"></div>
-<!--    <ul>-->
-<!--      <li><a :href="'/' + props.plugin + '/'">{{props.plugin}}</a></li>-->
-<!--      <li><a :href="'/' + props.plugin + '/commands/'">Commands</a></li>-->
-<!--      <li><a :href="'/' + props.plugin + '/api/'">Plugin API</a></li>-->
-<!--      <li><a :href="'/' + props.plugin + '/download/'">Download</a></li>-->
-<!--      <hr>-->
-<!--      <li><a :href="'https://github.com/FancyMcPlugins/' + plugin" target="_blank">GitHub</a></li>-->
-<!--      <li><a href="https://discord.gg/ZUgYCEJUEx" target="_blank">Discord</a></li>-->
-<!--    </ul>-->
-
     <ul>
       <RouterLink :to="'/' + props.plugin + '/'"><li>{{props.plugin}}</li></RouterLink>
-      <RouterLink :to="'/' + props.plugin + '/commands/'"><li>Commands</li></RouterLink>
-      <RouterLink :to="'/' + props.plugin + '/api/'"><li>Plugin API</li></RouterLink>
+      <li><a :href="'https://fancymcplugins.github.io/docs/'+props.plugin.toLowerCase()+'.html'" target="_blank">Docs</a></li>
       <RouterLink :to="'/' + props.plugin + '/download/'"><li>Download</li></RouterLink>
       <hr>
       <li><a :href="'https://github.com/FancyMcPlugins/' + plugin" target="_blank">GitHub</a></li>
