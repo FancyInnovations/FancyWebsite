@@ -2,6 +2,6 @@
 
 <template>
   <main>
-    <h1>Welcome</h1>
+    <h1>FancyPlugins</h1>
   </main>
 </template>

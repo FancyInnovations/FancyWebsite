@@ -1,10 +1,11 @@
 <script setup lang="ts">
+import PluginTemplate from "@/components/PluginTemplate.vue";
+import Sidebar from "@/components/Sidebar.vue";
 
-import Plugin from "@/views/plugin/Plugin.vue";
 </script>
 
 <template>
-  <Plugin
+  <PluginTemplate
       name="FancyNpcs"
       title_url="src/assets/img/fancynpcs_title.png"
   />

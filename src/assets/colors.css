@@ -2,21 +2,25 @@
   --blue: #2eaccc;
   --blue-light: #3bd8ff;
   --blue-dark: #134d5c;
-  --background-color: #030311;
+  --background-color: #110a03;
   --foreground-color: #fff;
   --gray: #929292;
+
+  --yellow: #FFD700;
+  --yellow-light: #FFFACD;
+  --yellow-dark: #836500;
 }
 
-.color-blue {
-  color: var(--blue);
+.color-yellow {
+  color: var(--yellow);
 }
 
-.color-blue-light {
-  color: var(--blue-light);
+.color-yellow-light {
+  color: var(--yellow-light);
 }
 
-.color-blue-dark {
-  color: var(--blue-dark);
+.color-yellow-dark {
+  color: var(--yellow-dark);
 }
 
 .color-background {

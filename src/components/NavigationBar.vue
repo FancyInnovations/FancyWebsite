@@ -6,7 +6,7 @@ import { RouterLink } from 'vue-router'
   <nav>
     <div class="nav-item">
       <RouterLink to="/">
-        <img src="src/assets/img/FancyPlugins_1024.png" alt="FancyPlugins" />
+        <img src="/src/assets/img/FancyPlugins_1024.png" alt="FancyPlugins" />
       </RouterLink>
     </div>
     <div class="nav-item">
@@ -26,13 +26,13 @@ import { RouterLink } from 'vue-router'
 
       <div class="nav-item">
         <a href="https://github.com/FancyMcPlugins" target="_blank">
-          <img src="src/assets/img/github.png" alt="GitHub" />
+          <img src="/src/assets/img/github.png" alt="GitHub" />
         </a>
       </div>
 
       <div class="nav-item">
         <a href="https://discord.gg/ZUgYCEJUEx" target="_blank">
-          <img src="src/assets/img/discord.png" alt="Discord" />
+          <img src="/src/assets/img/discord.png" alt="Discord" />
         </a>
       </div>
     </div>
@@ -44,7 +44,7 @@ nav {
   max-height: 60px;
   width: 100%;
   padding: 0;
-  background-color: var(--blue-dark);
+  background-color: #211d07;
   overflow: hidden;
   display: flex;
 }
@@ -74,7 +74,7 @@ h1 {
 }
 
 p {
-  color: var(--blue-light);
+  color: var(--yellow);
   font-size: inherit;
   padding: 5px 10px;
   border-radius: 5px;
@@ -82,8 +82,7 @@ p {
 }
 
 p:hover {
-  background-color: var(--blue);
-  color: var(--blue-dark);
+  background-color: var(--yellow-dark);
 }
 
 a {
