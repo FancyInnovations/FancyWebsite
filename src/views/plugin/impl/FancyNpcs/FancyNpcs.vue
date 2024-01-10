@@ -5,10 +5,7 @@ import Sidebar from "@/components/Sidebar.vue";
 </script>
 
 <template>
-  <PluginTemplate
-      name="FancyNpcs"
-      title_url="src/assets/img/fancynpcs_title.png"
-  />
+  <PluginTemplate name="FancyNpcs"/>
 </template>
 
 <style scoped>
