@@ -1,0 +1,66 @@
+<!DOCTYPE html SYSTEM "about:legacy-compat"><html lang="en-US" data-colors-preset="contrast" data-primary-color="#3F56CE"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8">  <meta name="built-on" content="2024-01-20T15:00:30.1448119"><meta name="build-number" content="${buildNumber}">       <title>API | FancyPlugins</title><script id="virtual-toc-data" type="application/json">[{"id":"including-the-api-into-your-project","level":0,"title":"Including the API into your project","anchor":"#including-the-api-into-your-project"},{"id":"create-a-new-hologram","level":0,"title":"Create a new hologram","anchor":"#create-a-new-hologram"},{"id":"modify-an-existing-hologram","level":0,"title":"Modify an existing hologram","anchor":"#modify-an-existing-hologram"},{"id":"help-about-the-api","level":0,"title":"Help about the API","anchor":"#help-about-the-api"}]</script><script id="topic-shortcuts" type="application/json"></script><link href="https://resources.jetbrains.com/writerside/apidoc/6.6.6-b205/app.css" rel="stylesheet">    <link rel="icon" type="image/png" sizes="16x16" href="docs/favicon.png">   <meta name="image" content=""><!-- Open Graph --><meta property="og:title" content="API | FancyPlugins"/><meta property="og:description" content=""/><meta property="og:image" content=""/><meta property="og:site_name" content="FancyPlugins Help"/><meta property="og:type" content="website"/><meta property="og:locale" content="en_US"/><meta property="og:url" content="fh-api.html"/><!-- End Open Graph --><!-- Twitter Card --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content=""><meta name="twitter:title" content="API | FancyPlugins"><meta name="twitter:description" content=""><meta name="twitter:creator" content=""><meta name="twitter:image:src" content=""><!-- End Twitter Card --><!-- Schema.org WebPage --><script type="application/ld+json"> { "@context": "http://schema.org", "@type": "WebPage", "@id": "fh-api.html#webpage", "url": "fh-api.html", "name": "API | FancyPlugins", "description": "", "image": "", "inLanguage":"en-US" }</script><!-- End Schema.org --><!-- Schema.org WebSite --><script type="application/ld+json"> { "@type": "WebSite", "@id": "/#website", "url": "/", "name": "FancyPlugins Help" }</script><!-- End Schema.org --></head>      <body data-id="FH-API" data-main-title="API" data-article-props="{&quot;seeAlsoStyle&quot;:&quot;links&quot;}"  data-template="article"  data-breadcrumbs="FancyHolograms.md|FancyHolograms"  >   <div class="wrapper"><main class="panel _main"><header class="panel__header"><div class="container"><h3>FancyPlugins  Help</h3><div class="panel-trigger"></div></div></header><section class="panel__content"><div class="container"><article class="article" data-shortcut-switcher="inactive"><h1 data-toc="FH-API"   id="FH-API.md">API</h1>  <section class="chapter"><h2 id="including-the-api-into-your-project" data-toc="including-the-api-into-your-project"   >Including the API into your project</h2><section class="chapter"><h3 id="gradle" data-toc="gradle"   >Gradle</h3><div class="code-block" data-lang="kotlin"         >
+repositories {
+    maven(&quot;https://repo.fancyplugins.de/releases&quot;)
+    ...
+}
+</div><div class="code-block" data-lang="kotlin"         >
+dependencies {
+    compileOnly(&quot;de.oliver:FancyHolograms:version&quot;)
+    ...
+}
+</div></section><section class="chapter"><h3 id="maven" data-toc="maven"   >Maven</h3><div class="code-block" data-lang="markup"         >
+&lt;repository&gt;
+    &lt;id&gt;fancyplugins-releases&lt;/id&gt;
+    &lt;name&gt;FancyPlugins Repository&lt;/name&gt;
+    &lt;url&gt;https://repo.fancyplugins.de/releases&lt;/url&gt;
+&lt;/repository&gt;
+</div><div class="code-block" data-lang="markup"         >
+&lt;dependency&gt;
+    &lt;groupId&gt;de.oliver&lt;/groupId&gt;
+    &lt;artifactId&gt;FancyHolograms&lt;/artifactId&gt;
+    &lt;version&gt;VERSION&lt;/version&gt;
+&lt;/dependency&gt;
+
+</div></section></section><section class="chapter"><h2 id="create-a-new-hologram" data-toc="create-a-new-hologram"   >Create a new hologram</h2><div class="code-block" data-lang="java"         >
+HologramManager manager = FancyHologramsPlugin.get().getHologramManager();
+
+DisplayHologramData displayData = DisplayHologramData.getDefault(location);
+displayData.setBillboard(Display.Billboard.FIXED);
+// set more general data here
+
+TextHologramData textData = TextHologramData.getDefault(&quot;hologram_name&quot;); // or create BlockHologramData / ItemHologramData
+textData.setBackground(TextColor.color(100, 255, 79));
+// set more type-specific data here
+
+HologramData data = new HologramData(&quot;hologram_name&quot;, displayData, HologramType.TEXT, textData);
+Hologram hologram = manager.create(data);
+
+manager.addHologram(hologram); // registers the hologram (FancyHolograms will save and load it)
+
+hologram.createHologram();
+hologram.showHologram(Bukkit.getOnlinePlayers());
+</div></section><section class="chapter"><h2 id="modify-an-existing-hologram" data-toc="modify-an-existing-hologram"   >Modify an existing hologram</h2><div class="code-block" data-lang="java"         >
+HologramManager manager = FancyHologramsPlugin.get().getHologramManager();
+
+Hologram holo = manager.getHologram(&quot;hologram_name&quot;).orElse(null);
+if (holo == null) {
+    // hologram not found
+    return;
+}
+
+holo.getData().getDisplayData().setBillboard(Display.Billboard.CENTER);
+
+if (holo.getData().getTypeData() instanceof TextHologramData textData) {
+    textData.setTextAlignment(TextDisplay.TextAlignment.LEFT);
+}
+
+// apply the changes
+holo.updateHologram();
+
+// refresh the hologram for all players
+holo.refreshHologram(Bukkit.getOnlinePlayers());
+
+// if refreshing did not work, try to respawn the hologram
+holo.hideHologram(Bukkit.getOnlinePlayers());
+holo.showHologram(Bukkit.getOnlinePlayers());
+</div></section><section class="chapter"><h2 id="help-about-the-api" data-toc="help-about-the-api"   >Help about the API</h2><aside class="prompt" data-type="tip" data-title="" id="357f35aa_15"><p>If you need help with the API, you can join our <a href="https://discord.gg/8QH2Z3Z" id="357f35aa_16"   data-external="true" rel="noopener noreferrer" >Discord</a> and ask in the #holograms-dev channel.</p></aside></section><div class="last-modified"> Last modified: 20 Januar 2024</div><div data-feedback-placeholder="true"></div><div class="navigation-links _bottom">  <a class="navigation-links__prev" href="fh-commands.html">Commands</a>   <a class="navigation-links__next" href="test.html">Test</a>  </div></article><div id="disqus_thread"></div></div></section></main></div>  <script src="https://resources.jetbrains.com/writerside/apidoc/6.6.6-b205/app.js"></script></body></html>
