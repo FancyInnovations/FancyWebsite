@@ -4,7 +4,7 @@ import {createApp, ref, VueElement} from "vue";
 
 const props = defineProps(["plugin"])
 
-const builds = ref([])
+const builds = ref<any[]>([])
 
 async function fetchAndRenderBuilds() {
   try {
@@ -12,7 +12,7 @@ async function fetchAndRenderBuilds() {
     const project = await projectResponse.json();
 
     const sortedBuilds = project.builds
-        .sort((a, b) => a.number > b.number ? -1 : 1)
+        .sort((a: any, b: any) => a.number > b.number ? -1 : 1)
         .slice(0, 15);
 
     for (const b of sortedBuilds) {
@@ -57,7 +57,7 @@ setTimeout(() => {
   errorParagraph.textContent = "Could not load data."
   errorParagraph.className = 'error'
 
-  buildsContainer.appendChild(errorParagraph)
+  buildsContainer?.appendChild(errorParagraph)
 }, 1000);
 
 fetchAndRenderBuilds();
