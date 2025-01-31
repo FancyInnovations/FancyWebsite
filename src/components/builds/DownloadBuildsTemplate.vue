@@ -20,10 +20,10 @@ async function fetchAndRenderBuilds() {
       const buildInfo = await buildResponse.json();
 
       if(buildInfo.result != "SUCCESS") {
-        return
+        continue;
       }
 
-      let lastChange = buildInfo.changeSet.items[buildInfo.changeSet.items.length - 1];
+      let lastChange = buildInfo.changeSets[0].items[buildInfo.changeSets[0].items.length - 1];
       if(!lastChange){
         lastChange = {
           commitId: "N/A",
