@@ -4,8 +4,6 @@
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-
-<!-- /ng -->
   <url>
     <loc>https://fancyplugins.de/</loc>
     <lastmod>2024-01-20T15:00:00+00:00</lastmod>
@@ -34,24 +32,5 @@
     <loc>https://fancyplugins.de/FancyHolograms/download/</loc>
     <lastmod>2024-01-20T15:00:00+00:00</lastmod>
     <priority>0.50</priority>
-  </url>
-
-<!-- /docs -->
-  <url>
-    <loc>https://fancyplugins.de/docs/welcome.html</loc>
-    <lastmod>2024-01-20T15:00:00+00:00</lastmod>
-    <priority>1.00</priority>
-  </url>
-
-  <url>
-    <loc>https://fancyplugins.de/docs/fancynpcs.html</loc>
-    <lastmod>2024-01-20T15:00:00+00:00</lastmod>
-    <priority>0.80</priority>
-  </url>
-
-  <url>
-    <loc>https://fancyplugins.de/docs/fancyholograms.html</loc>
-    <lastmod>2024-01-20T15:00:00+00:00</lastmod>
-    <priority>0.80</priority>
   </url>
 </urlset>
