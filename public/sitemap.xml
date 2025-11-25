@@ -6,19 +6,7 @@
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
   <url>
     <loc>https://fancyplugins.de/</loc>
-    <lastmod>2024-01-20T15:00:00+00:00</lastmod>
+    <lastmod>2025-11-25T15:00:00+00:00</lastmod>
     <priority>1.00</priority>
-  </url>
-
-  <url>
-    <loc>https://fancyplugins.de/FancyNpcs/</loc>
-    <lastmod>2024-01-20T15:00:00+00:00</lastmod>
-    <priority>0.80</priority>
-  </url>
-
-  <url>
-    <loc>https://fancyplugins.de/FancyHolograms/</loc>
-    <lastmod>2024-01-20T15:00:00+00:00</lastmod>
-    <priority>0.80</priority>
   </url>
 </urlset>
