@@ -17,34 +17,6 @@ const router = createRouter({
       component: HomeView
     },
     {
-      path: '/FancyNpcs',
-      name: 'fancynpcs',
-      component: () => import('../views/plugin/impl/FancyNpcs/FancyNpcs.vue')
-    },
-    {
-      path: '/FancyNpcs/Download',
-      name: 'fn-download',
-      component: () => import('../views/plugin/impl/FancyNpcs/FN-Downloads.vue'),
-      beforeEnter: () => {
-        window.location.href = 'https://modrinth.com/plugin/fancynpcs/versions';
-      }
-    },
-    {
-      path: '/FancyHolograms',
-      name: 'fancyholograms',
-      component: () => import('../views/plugin/impl/FancyHolograms/FancyHolograms.vue')
-    },
-    {
-      path: '/FancyHolograms/Download',
-      name: 'fh-download',
-      component: () => import('../views/plugin/impl/FancyHolograms/FH-Downloads.vue')
-    },
-    {
-      path: '/FancyDialogs',
-      name: 'fancydialogs',
-      component: () => import('../views/plugin/impl/FancyDialogs/FancyDialogs.vue')
-    },
-    {
       path: '/Impressum',
       name: 'impressum',
       component: () => import('../views/Impressum.vue')
