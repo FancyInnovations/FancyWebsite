@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { RouterLink } from 'vue-router'
 import { onMounted } from 'vue'
 
 onMounted(() => {
@@ -27,7 +26,7 @@ onMounted(() => {
           <img src="../assets/img/FancyPlugins_1024.png" alt="FancyInnovations Logo" />
         </div>
         <h1 class="hero-title">FancyInnovations</h1>
-        <p class="hero-subtitle">A collection of plugins that will make your server look more <b>fancy</b></p>
+        <p class="hero-subtitle">✨ Makes everything more <b>fancy</b> ✨</p>
         <div class="hero-features">
           <span class="feature-tag">Simple</span>
           <span class="feature-tag">Lightweight</span>
@@ -55,7 +54,7 @@ onMounted(() => {
               <p class="card-description">Create and manage blazingly fast NPCs with the power of packets</p>
               <div class="card-buttons">
                 <a href="https://modrinth.com/plugin/fancynpcs/versions" target="_blank" class="btn-download">Download</a>
-                <RouterLink to="/FancyNpcs" class="btn-details">View Details</RouterLink>
+                <a href="https://docs.fancyinnovations.com/fancynpcs/" target="_blank" class="btn-details">Documentation</a>
               </div>
             </div>
 
@@ -67,7 +66,7 @@ onMounted(() => {
               <p class="card-description">Create and manage ultra modern holograms with display entities</p>
               <div class="card-buttons">
                 <a href="https://modrinth.com/plugin/fancyholograms/versions" target="_blank" class="btn-download">Download</a>
-                <RouterLink to="/FancyHolograms" class="btn-details">View Details</RouterLink>
+                <a href="https://docs.fancyinnovations.com/fancyholograms/" target="_blank" class="btn-details">Documentation</a>
               </div>
             </div>
 
@@ -76,10 +75,10 @@ onMounted(() => {
                 <img src="https://raw.githubusercontent.com/FancyInnovations/FancyPlugins/main/docs/src/static/logos-and-banners/fancydialogs-logo.png" alt="FancyDialogs Logo" />
               </div>
               <h3 class="card-title">FancyDialogs</h3>
-              <p class="card-description">Create immersive interactive dialogs and conversations for players</p>
+              <p class="card-description">Create immersive interactive dialogs and modern menus for players</p>
               <div class="card-buttons">
                 <a href="https://modrinth.com/plugin/fancydialogs/versions" target="_blank" class="btn-download">Download</a>
-                <RouterLink to="/FancyDialogs" class="btn-details">View Details</RouterLink>
+                <a href="https://docs.fancyinnovations.com/fancydialogs/" target="_blank" class="btn-details">Documentation</a>
               </div>
             </div>
           </div>
